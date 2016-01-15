@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!--
+    'aosp' is the official Android remote where we get the sources from.
+    We've removed the 'review' tag, because we don't want to upload our changes for review
+    to the official Android Gerrit server. Maybe we'll set up our own later, but that hasn't
+    happened yet.
+    We're forking some Android projects, but not all of them. Our forked projects are conveniently
+    marked as such, and use the remote 'cibernoid-official', our official version control system
+    hosted at GitHub. All the other projects are fetched from AOSP official servers, tagged under
+    'android-6.1.0_r10'.
+  -->
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com" />
+  <remote  name="cibernoid-official"
+           fetch="https://github.com/DroneFS/" />
+  
+  <default revision="master"
+           remote="aosp"
+           sync-j="4" />
+  
+  <!-- Our forked projects begin here -->
+  <project path="system/vold" name="cibernoid-vold" groups="pdk"
+           remote="cibernoid-official"
+           revision="master" />
+  
+  <!-- Offical Android projects -->
+  <project path="build" name="platform/build" groups="pdk,tradefed" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
+  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="system/nvram" name="platform/system/nvram" />
+</manifest>
+<!-- vim: set ts=2 sw=2 expandtab smartindent: -->
