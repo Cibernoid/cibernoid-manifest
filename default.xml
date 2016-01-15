@@ -6,13 +6,13 @@
     to the official Android Gerrit server. Maybe we'll set up our own later, but that hasn't
     happened yet.
     We're forking some Android projects, but not all of them. Our forked projects are conveniently
-    marked as such, and use the remote 'cibernoid-official', our official version control system
-    hosted at GitHub. All the other projects are fetched from AOSP official servers, tagged under
+    marked as such, and use the remote 'origin', our official version control system
+    hosted on GitHub. All the other projects are fetched from AOSP official servers, tagged under
     'android-6.1.0_r10'.
   -->
   <remote  name="aosp"
            fetch="https://android.googlesource.com" />
-  <remote  name="cibernoid-official"
+  <remote  name="origin"
            fetch="https://github.com/DroneFS/" />
   
   <default revision="master"
@@ -21,7 +21,7 @@
   
   <!-- Our forked projects begin here -->
   <project path="system/vold" name="cibernoid-vold" groups="pdk"
-           remote="cibernoid-official"
+           remote="origin"
            revision="master" />
   
   <!-- Offical Android projects -->
