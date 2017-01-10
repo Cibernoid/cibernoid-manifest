@@ -13,11 +13,11 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com" />
   <remote  name="origin"
-           fetch="https://github.com/DroneFS/" />
+           fetch="https://github.com/Cibernoid/" />
   
   <default revision="master"
            remote="aosp"
-           sync-j="4" />
+           sync-j="16" />
   
   <!-- Our forked projects begin here -->
   <project path="system/vold" name="cibernoid-vold" groups="pdk"
