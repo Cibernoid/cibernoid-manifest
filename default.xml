@@ -7,6 +7,9 @@
   <remote  name="tec"
            fetch="https://github.com/Cibernoid/"
            remote="refs/heads/android-7.1.2_r33" />
+  <remote  name="tec-dfs"
+           fetch="https://github.com/DroneFS/"
+           remote="refs/heads/android-7.1.2_r33" />
   <default revision="refs/tags/android-7.1.2_r33"
            remote="aosp"
            sync-j="4" />
@@ -22,7 +25,7 @@
   </project>
   <project path="system/core" name="platform/system/core" groups="pdk" />
   <project path="system/core/libchall" name="device-monitor"
-    remote="tec" />
+    remote="tec-dfs" />
   <project path="system/core/sdcard" name="cibernoid-sdcard"
     remote="tec" />
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
