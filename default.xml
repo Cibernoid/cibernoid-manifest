@@ -2,11 +2,11 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
   <remote  name="tec"
-    fetch="https://github.com/Cibernoid/"
-    remote="master" />
+           fetch="https://github.com/Cibernoid/"
+           remote="refs/heads/android-7.1.2_r33" />
   <default revision="refs/tags/android-7.1.2_r33"
            remote="aosp"
            sync-j="4" />
